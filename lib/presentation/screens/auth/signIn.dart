@@ -84,7 +84,7 @@ class _SignInState extends State<SignIn> {
                       onTap: () {
                         Navigator.pushNamed(context, RoutesManager.verifyRoute);
                       },
-                      child: Text('Forget Password?',
+                      child: const Text('Forget Password?',
                           style: TextStyle(
                               color: ColorsManager.yellow,
                               fontSize: 17,
