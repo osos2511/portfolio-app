@@ -141,7 +141,7 @@ class _SignUpState extends State<SignUp> {
                     child: Text(
                       StringsManager.signUp,
                       style: TextStyle(
-                        color: ColorsManager.textButtonColor,
+                        color: ColorsManager.mainAppColor,
                         fontSize: responsiveFontSize(context, 25),
                         fontWeight: FontWeight.w600,
                       ),

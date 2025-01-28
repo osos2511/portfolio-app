@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Search extends StatelessWidget {
-  const Search({super.key});
+class MoreTab extends StatelessWidget {
+  const MoreTab({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: Colors.green,
     );
   }
 }

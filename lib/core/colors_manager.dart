@@ -11,5 +11,5 @@ class ColorsManager{
   static const Color brawn=Color(0xFFCF7E48);
   static const Color blue=Color(0xFF4882CF);
   static const Color yellow=Color(0xffFEC627);
-  static const Color textButtonColor=Color(0xff171D2B);
+  static const Color mainAppColor=Color(0xff171D2B);
 }

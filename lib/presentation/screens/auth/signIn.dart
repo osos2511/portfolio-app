@@ -117,7 +117,7 @@ class _SignInState extends State<SignIn> {
                     child: Text(
                       StringsManager.signIn,
                       style: TextStyle(
-                        color: ColorsManager.textButtonColor,
+                        color: ColorsManager.mainAppColor,
                         fontSize: responsiveFontSize(context, 25),
                         fontWeight: FontWeight.w600,
                       ),

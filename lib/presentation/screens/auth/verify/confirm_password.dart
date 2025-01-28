@@ -97,7 +97,7 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
                   ),
                   child: Text('Confirm',style: GoogleFonts.poppins(
                       fontSize: 20,
-                      color: ColorsManager.textButtonColor,
+                      color: ColorsManager.mainAppColor,
                       fontWeight: FontWeight.w600
                   ),),
                 ),

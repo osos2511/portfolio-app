@@ -80,7 +80,7 @@ class VerifyOtp extends StatelessWidget {
                 ),
                 child: Text('Verify',style: GoogleFonts.poppins(
                   fontSize: 20,
-                  color: ColorsManager.textButtonColor,
+                  color: ColorsManager.mainAppColor,
                   fontWeight: FontWeight.w600
                 ),),
               ),
