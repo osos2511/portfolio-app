@@ -11,7 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? labelText;
 
   const CustomTextFormField({
-    Key? key,
+    super.key,
     required this.hintText,
     this.validator,
     this.controller,
@@ -19,7 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.prefixIcon,
     this.labelText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +28,18 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       obscureText: obscureText,
       validator: validator,
-      style: TextStyle(color: ColorsManager.white), // Text color
+      style: const TextStyle(color: ColorsManager.white),
       decoration: InputDecoration(
-        hintStyle: TextStyle(color: ColorsManager.white), // Hint text color
+        hintStyle: const TextStyle(color: ColorsManager.white),
         hintText: hintText,
         labelText: labelText,
-        labelStyle: TextStyle(color: ColorsManager.white), // Label text color
+        labelStyle: const TextStyle(color: ColorsManager.white),
         prefixIcon: prefixIcon != null ? Icon(prefixIcon, color: ColorsManager.white) : null,
         enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorsManager.white), // Default border color (white)
+          borderSide: BorderSide(color: ColorsManager.white),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorsManager.yellow, width: 2), // Focused border color (yellow)
+          borderSide: BorderSide(color: ColorsManager.yellow, width: 2),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       ),

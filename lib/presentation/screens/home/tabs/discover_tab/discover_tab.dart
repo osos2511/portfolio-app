@@ -39,7 +39,7 @@ class DiscoverTab extends StatelessWidget {
                   CircleAvatar(
                     radius: 30,
                     child: Image.asset(AssetsManager.ob3),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(

@@ -1,11 +1,14 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:info_tech/core/colors_manager.dart';
 import 'package:info_tech/presentation/screens/home/tabs/discover_tab/discover_tab.dart';
-import 'package:info_tech/presentation/screens/home/tabs/home/home_tab.dart';
-import 'package:info_tech/presentation/screens/home/tabs/message/message_tab.dart';
-import 'package:info_tech/presentation/screens/home/tabs/more/more_tab.dart';
-import 'package:info_tech/presentation/screens/home/tabs/search/search_tab.dart';
+import 'package:info_tech/presentation/screens/home/tabs/home_tab/home_tab.dart';
+import 'package:info_tech/presentation/screens/home/tabs/message_tab/message_tab.dart';
+import 'package:info_tech/presentation/screens/home/tabs/more_tab/more_tab.dart';
+import 'package:info_tech/presentation/screens/home/tabs/search_tab/search_tab.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:provider/provider.dart';
+
+import '../../../provider/page_controller.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,22 +18,34 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final List<Widget> _tabs = [
-    SearchTab(),
-    HomeTab(),
-    DiscoverTab(),
-    MessageTab(),
-    MoreTab(),
-  ];
-
   int _pageIndex = 2;
+
+  final List<Widget> _tabs = [
+    const SearchTab(),
+    const DiscoverTab(),
+    const HomeTab(),
+    MessageTab(),
+    const MoreTab(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
       extendBody: true,
-      body: _tabs[_pageIndex],
+      body: Consumer<PageControllerProvider>(
+        builder: (context, pageControllerProvider, child) {
+          return PageView(
+            controller: pageControllerProvider.pageController,
+            onPageChanged: (index) {
+              setState(() {
+                _pageIndex = index;
+              });
+            },
+            children: _tabs,
+          );
+        },
+      ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
         color: ColorsManager.yellow,
@@ -42,11 +57,12 @@ class _HomeState extends State<Home> {
           setState(() {
             _pageIndex = index;
           });
-        },
+          context.read<PageControllerProvider>().jumpToPage(index);
+          },
         items: [
           _buildNavItem(Icons.search, 'Search'),
-          _buildNavItem(Icons.home, 'Home'),
           _buildNavItem(Icons.explore, 'Discover'),
+          _buildNavItem(Icons.home, 'Home'),
           _buildNavItem(Icons.message, 'Message'),
           _buildNavItem(Icons.more_horiz_rounded, 'More'),
         ],
@@ -61,7 +77,7 @@ class _HomeState extends State<Home> {
         Icon(icon, size: 30, color: ColorsManager.mainAppColor),
         Text(
           label,
-          style:  const TextStyle(
+          style: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.bold,
             color: ColorsManager.mainAppColor,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:info_tech/core/colors_manager.dart';  // Import the ColorsManager
+import 'package:info_tech/core/colors_manager.dart';
 
 class CustomRadioButton extends StatelessWidget {
   final String title;
@@ -8,12 +8,12 @@ class CustomRadioButton extends StatelessWidget {
   final ValueChanged<String?> onChanged;
 
   const CustomRadioButton({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     required this.selectedOption,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,11 @@ class CustomRadioButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        onChanged(value);  // Notify the parent about the change
+        onChanged(value);
       },
       child: Container(
-        padding: EdgeInsets.all(16),
-        margin: EdgeInsets.symmetric(vertical: 5),
+        padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.symmetric(vertical: 5),
         decoration: BoxDecoration(
           color: isSelected ? ColorsManager.yellow : ColorsManager.white,
           borderRadius: BorderRadius.circular(10),
@@ -40,7 +40,7 @@ class CustomRadioButton extends StatelessWidget {
               isSelected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
               color: isSelected ? ColorsManager.white : ColorsManager.yellow,
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Text(
               title,
               style: TextStyle(

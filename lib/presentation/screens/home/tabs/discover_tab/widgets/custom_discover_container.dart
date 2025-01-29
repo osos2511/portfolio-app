@@ -10,14 +10,15 @@ class CustomDiscoverContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width*0.4,
-      height: MediaQuery.of(context).size.height*0.27,
-      padding: EdgeInsets.all(5),
+      width: MediaQuery.of(context).size.width*0.43,
+      height: MediaQuery.of(context).size.height*0.29,
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       decoration:  BoxDecoration(
         color: ColorsManager.yellow,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(text,style: GoogleFonts.pottaOne(color: ColorsManager.mainAppColor,fontWeight: FontWeight.w400,fontSize: 20),),
           Image.asset(image),
@@ -26,8 +27,8 @@ class CustomDiscoverContainer extends StatelessWidget {
               child: Row(
             children: [
               Text('Discover',style: GoogleFonts.poppins(color: Colors.yellow,fontWeight: FontWeight.w400,fontSize: 15),),
-              Spacer(),
-              Icon(Icons.keyboard_arrow_right_rounded,color: ColorsManager.yellow,size: 20,),
+              const Spacer(),
+              const Icon(Icons.keyboard_arrow_right_rounded,color: ColorsManager.yellow,size: 20,),
             ],
           ))
 
