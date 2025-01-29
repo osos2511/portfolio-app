@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
     const DiscoverTab(),
     const HomeTab(),
     MessageTab(),
-    const MoreTab(),
+     MoreTab(),
   ];
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:info_tech/presentation/screens/auth/verify/confirm_password.dart';
 import 'package:info_tech/presentation/screens/auth/verify/verify_otp.dart';
+import 'package:info_tech/presentation/screens/home/tabs/more_tab/more_tab.dart';
 import 'package:info_tech/presentation/screens/home/tabs/search_tab/search_tab.dart';
 import 'package:info_tech/presentation/screens/onboarding/onboarding.dart';
 import '../presentation/screens/auth/signIn.dart';
@@ -18,6 +19,7 @@ class RoutesManager{
   static const String confirmPasswordRoute = "/confirmPassword";
   static const String onboardingRoute = "/onboarding";
   static const String searchTabRoute = "/search";
+  static const String moreTabRoute = "/more";
 
 
   static Route<dynamic>? router(RouteSettings settings){
@@ -48,6 +50,9 @@ class RoutesManager{
       }
       case searchTabRoute:{
         return MaterialPageRoute(builder: (context) =>  const SearchTab());
+      }
+      case moreTabRoute:{
+        return MaterialPageRoute(builder: (context) =>   MoreTab());
       }
 
 
