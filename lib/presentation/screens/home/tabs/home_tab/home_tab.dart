@@ -21,7 +21,6 @@ class HomeTab extends StatelessWidget {
         ),
         child: Column(
           children: [
-
             Row(
               children: [
                 Column(
@@ -41,18 +40,9 @@ class HomeTab extends StatelessWidget {
                     ),
                   ],
                 ),
-              //   const Spacer(),
-              //   CircleAvatar(
-              //     backgroundColor: ColorsManager.yellow,
-              //     radius: screenWidth * 0.08,
-              //     child: Image.asset(AssetsManager.ob3),
-              //   ),
-               ],
+              ],
             ),
-
             SizedBox(height: screenHeight * 0.03),
-
-
             const Row(
               children: [
                 CustomDiscoverContainer(
@@ -62,13 +52,10 @@ class HomeTab extends StatelessWidget {
                     image: AssetsManager.ob2, text: 'Development'),
               ],
             ),
-
             SizedBox(height: screenHeight * 0.03),
-
-
             Container(
               width: double.infinity,
-              height: screenHeight * 0.3,
+              height: screenHeight * 0.32,
               padding: EdgeInsets.all(screenWidth * 0.03),
               decoration: BoxDecoration(
                 color: ColorsManager.yellow,
@@ -76,7 +63,6 @@ class HomeTab extends StatelessWidget {
               ),
               child: Row(
                 children: [
-
                   Expanded(
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
@@ -87,10 +73,7 @@ class HomeTab extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   SizedBox(width: screenWidth * 0.02),
-
-
                   Expanded(
                     flex: 2,
                     child: Column(
@@ -116,10 +99,10 @@ class HomeTab extends StatelessWidget {
                         SizedBox(height: screenHeight * 0.01),
                         Text(
                           "- web, app development\n"
-                              "- web, app designing\n"
-                              "- editing web, app\n"
-                              "- software engineering\n"
-                              "- social media posting",
+                          "- web, app designing\n"
+                          "- editing web, app\n"
+                          "- software engineering\n"
+                          "- social media posting",
                           style: GoogleFonts.poppins(
                             fontSize: screenWidth * 0.035,
                             color: Colors.black,
@@ -131,12 +114,14 @@ class HomeTab extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            minimumSize: Size(double.infinity, screenHeight * 0.05),
+                            minimumSize:
+                                Size(double.infinity, screenHeight * 0.05),
                             backgroundColor: ColorsManager.mainAppColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: screenWidth * 0.05),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,

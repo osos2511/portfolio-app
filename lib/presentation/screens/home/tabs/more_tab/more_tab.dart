@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:info_tech/core/routes_manager.dart';
-import 'package:info_tech/presentation/screens/Custom_appbar.dart';
+import 'package:info_tech/presentation/screens/custom_appbar.dart';
 import 'package:info_tech/presentation/screens/home/tabs/more_tab/widgets/custom_more_container.dart';
 import '../../../../../core/colors_manager.dart';
 

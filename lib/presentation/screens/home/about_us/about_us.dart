@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:info_tech/presentation/screens/Custom_appbar.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/colors_manager.dart';
 import '../../../../provider/page_controller.dart';
@@ -13,28 +14,7 @@ class AboutUs extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'ABOUT US',
-          style: GoogleFonts.alexandria(
-            color: ColorsManager.mainAppColor,
-            fontSize: screenHeight * 0.035,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        backgroundColor: ColorsManager.yellow,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-            context.read<PageControllerProvider>().jumpToPage(4);
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-            size: 33,
-          ),
-        ),
-      ),
+      appBar: const CustomAppbar(titleAppbar: 'ABOUT US'),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

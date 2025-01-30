@@ -18,7 +18,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
           style: GoogleFonts.alexandria(
             fontSize: 30,
             fontWeight: FontWeight.w600,
-            color: ColorsManager.mainAppColor, // Ensure text is visible
+            color: ColorsManager.mainAppColor,
           ),
         ),
         backgroundColor: ColorsManager.yellow,
