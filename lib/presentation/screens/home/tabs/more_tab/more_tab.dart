@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:info_tech/core/routes_manager.dart';
 import 'package:info_tech/presentation/screens/home/tabs/more_tab/widgets/custom_more_container.dart';
-
 import '../../../../../core/colors_manager.dart';
 
 class MoreTab extends StatelessWidget {
-  MoreTab({super.key});
+  const MoreTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,15 +31,13 @@ class MoreTab extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: screenHeight * 0.03),
-            CustomMoreContainer(text: 'Settings', icon: Icons.settings),
+             CustomMoreContainer(text: 'Settings', icon: Icons.settings,onTap: (){
+
+            },),
             SizedBox(height: screenHeight * 0.025),
-            CustomMoreContainer(text: 'Your Cart', icon: Icons.shopping_cart_rounded),
-            SizedBox(height: screenHeight * 0.025),
-            CustomMoreContainer(text: 'About us', icon: Icons.account_box_outlined),
-            SizedBox(height: screenHeight * 0.025),
-            CustomMoreContainer(text: 'Our Services', icon: Icons.room_service),
-            SizedBox(height: screenHeight * 0.025),
-            CustomMoreContainer(text: 'Our Projects', icon: Icons.pinch_rounded),
+             CustomMoreContainer(text: 'About us', icon: Icons.account_box_outlined,onTap: (){
+               Navigator.pushNamed(context, RoutesManager.aboutUsRoute);
+      },),
           ],
         ),
       ),

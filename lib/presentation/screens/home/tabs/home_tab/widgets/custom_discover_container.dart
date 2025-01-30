@@ -11,7 +11,7 @@ class CustomDiscoverContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width*0.43,
-      height: MediaQuery.of(context).size.height*0.29,
+      height: MediaQuery.of(context).size.height*0.30,
       padding: const EdgeInsets.symmetric(horizontal: 5),
       decoration:  BoxDecoration(
         color: ColorsManager.yellow,

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:info_tech/core/assets_manager.dart';
 import 'package:info_tech/core/colors_manager.dart';
-import 'package:provider/provider.dart';
-import '../../../../../provider/page_controller.dart';
+import 'package:info_tech/presentation/screens/home/tabs/home_tab/widgets/custom_discover_container.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -11,101 +10,135 @@ class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsManager.mainAppColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'HOME',
-          style: GoogleFonts.alexandria(
-            color: ColorsManager.mainAppColor,
-            fontSize: 30,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        backgroundColor: ColorsManager.yellow,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('HELLO ', style: GoogleFonts.poppins(color: ColorsManager.white, fontWeight: FontWeight.w600, fontSize: 23)),
-                Text('OSAMA', style: GoogleFonts.poppins(color: ColorsManager.yellow, fontWeight: FontWeight.w600, fontSize: 23)),
-              ],
-            ),
-            Text('What are you searching for today?', style: GoogleFonts.poppins(color: ColorsManager.white, fontSize: 15, fontWeight: FontWeight.w600)),
-            const SizedBox(height: 60),
-            Image.asset(AssetsManager.homeImg),
-            ShaderMask(
-              shaderCallback: (Rect bounds) {
-                return const LinearGradient(
-                  colors: [Color(0xFF122658), Color(0xFFC87BEA), Color(0xFFEADC78)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomLeft,
-                ).createShader(bounds);
-              },
-              child: Text(
-                'Welcome',
-                style: GoogleFonts.museoModerno(
-                  fontSize: 33,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const SizedBox(height: 15),
-            Text('Let\'s start on the way to make', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w400, fontSize: 18)),
-            Text('professional designs!', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w400, fontSize: 18)),
-            const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF142D6C), Color(0xFF0F1523)],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
-                borderRadius: BorderRadius.circular(30),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.3),
-                    blurRadius: 8,
-                    offset: Offset(2, 2),
+        backgroundColor: ColorsManager.mainAppColor,
+        body: Padding(
+          padding: const EdgeInsets.only(top: 45,left: 10,right: 10),
+          child: Column(
+            spacing: 20,
+            children: [
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Welcome!',
+                          style: GoogleFonts.poppins(
+                              color: ColorsManager.white,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 20)),
+                      Text(
+                        'Osama Mohamed',
+                        style: GoogleFonts.poppins(
+                            color: ColorsManager.yellow,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 25),
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  CircleAvatar(
+                    radius: 30,
+                    child: Image.asset(AssetsManager.ob3),
                   ),
                 ],
               ),
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<PageControllerProvider>().jumpToPage(0);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+
+              const Row(
+                children: [
+                  CustomDiscoverContainer(
+                      image: AssetsManager.ob3, text: 'Designing'),
+                  Spacer(),
+                  CustomDiscoverContainer(
+                      image: AssetsManager.ob2, text: 'Development')
+                ],
+              ),
+
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: ColorsManager.yellow,
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
+
+                child: Row(
                   children: [
-                    Text(
-                      "Start now with us",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    Expanded(
+                      child: Image.asset(
+                        AssetsManager.ob2,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "ALL SERVICES",
+                            style: GoogleFonts.pottaOne(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: ColorsManager.mainAppColor,
+                            ),
+                          ),
+                          Text(
+                            "50%",
+                            style: GoogleFonts.pottaOne(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400,
+                              color: ColorsManager.mainAppColor,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "- web, app development\n"
+                                "- web, app designing\n"
+                                "- editing web, app\n"
+                                "- software engineering\n"
+                                "- social media posting",
+                            style: GoogleFonts.poppins(fontSize: 14, color: Colors.black),
+                          ),
+                          const SizedBox(height: 10),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: Size(double.infinity,20),
+                              backgroundColor: ColorsManager.mainAppColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  'Apply',
+                                  style: GoogleFonts.poppins(
+                                    color: ColorsManager.yellow,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                                Spacer(),
+                                Icon(
+                                  Icons.keyboard_arrow_right_rounded,
+                                  color: ColorsManager.yellow,
+                                  size: 22,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+              )
+            ],
+          ),
+        ));
   }
 }
