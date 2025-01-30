@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:info_tech/core/routes_manager.dart';
+import 'package:info_tech/presentation/screens/Custom_appbar.dart';
 import 'package:info_tech/presentation/screens/home/tabs/more_tab/widgets/custom_more_container.dart';
 import '../../../../../core/colors_manager.dart';
 
@@ -13,20 +14,9 @@ class MoreTab extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'MORE',
-          style: GoogleFonts.alexandria(
-            color: ColorsManager.mainAppColor,
-            fontSize: screenHeight * 0.035, // Responsive font size
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        backgroundColor: ColorsManager.yellow,
-      ),
+      appBar:CustomAppbar(titleAppbar: "MORE"),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.02),
+        padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.025,vertical: screenHeight *0.2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -34,7 +24,7 @@ class MoreTab extends StatelessWidget {
              CustomMoreContainer(text: 'Settings', icon: Icons.settings,onTap: (){
 
             },),
-            SizedBox(height: screenHeight * 0.025),
+            SizedBox(height: screenHeight * 0.040),
              CustomMoreContainer(text: 'About us', icon: Icons.account_box_outlined,onTap: (){
                Navigator.pushNamed(context, RoutesManager.aboutUsRoute);
       },),

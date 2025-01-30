@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:info_tech/core/colors_manager.dart';
+import 'package:info_tech/presentation/screens/Custom_appbar.dart';
 import 'widgets/custom_ratio.dart';
 import 'widgets/custom_text_form.dart';
 
@@ -18,18 +19,7 @@ class _MessageTabState extends State<MessageTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'MESSAGE',
-          style: GoogleFonts.alexandria(
-            color: ColorsManager.mainAppColor,
-            fontSize: 30,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        backgroundColor: ColorsManager.yellow,
-      ),
+      appBar:CustomAppbar(titleAppbar: "MESSAGE"),
       body: SingleChildScrollView(
         child: Padding(
           padding:

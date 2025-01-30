@@ -16,7 +16,7 @@ class CustomMoreContainer extends StatelessWidget {
             child: Container(
               color: ColorsManager.yellow,
               width: double.infinity,
-              height: 100,
+              height: 90,
               child: Padding(
                 padding: const EdgeInsets.all(15),
                 child: Row(

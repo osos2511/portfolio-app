@@ -21,7 +21,9 @@ class CustomDiscoverContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(text,style: GoogleFonts.pottaOne(color: ColorsManager.mainAppColor,fontWeight: FontWeight.w400,fontSize: 20),),
-          Image.asset(image),
+          ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(image)),
           ElevatedButton(onPressed: (){},
               style: ElevatedButton.styleFrom(backgroundColor: ColorsManager.mainAppColor),
               child: Row(
