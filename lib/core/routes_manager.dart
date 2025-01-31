@@ -68,7 +68,10 @@ class RoutesManager {
         }
         case projectDetailsRoute:
         {
-          return MaterialPageRoute(builder: (context) => ProjectDetails());
+          final int index = settings.arguments as int;
+          return MaterialPageRoute(
+            builder: (context) => ProjectDetails(index: index),
+          );
         }
     }
   }

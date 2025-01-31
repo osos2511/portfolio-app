@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:info_tech/core/routes_manager.dart';
-import '../../../../../core/colors_manager.dart';
+import '../../../../../../core/colors_manager.dart';
 
 class CustomProject extends StatelessWidget {
   const CustomProject({
@@ -9,11 +9,13 @@ class CustomProject extends StatelessWidget {
     required this.title,
     required this.description,
     required this.image,
+    required this.index
   });
 
   final String image;
   final String title;
   final String description;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +95,8 @@ class CustomProject extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context,RoutesManager.projectDetailsRoute);
+                              Navigator.pushNamed(context,RoutesManager.projectDetailsRoute,arguments: index);
+
                             },
                             child: Text(
                               'more details',
