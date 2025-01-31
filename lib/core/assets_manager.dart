@@ -7,5 +7,10 @@ class AssetsManager{
   static const String person='assets/images/person.jpg';
   static const String homeImg='assets/images/Hero Image.png';
   static const String aboutUsImg='assets/images/aboutUs.png';
+  static const String flutterIcon='assets/images/flutter logo.png';
+  static const String laravelIcon='assets/images/laravel logo.png';
+  static const String reactIcon='assets/images/React logo.png';
+  static const String tsIcon='assets/images/ts logo.png';
+  static const String personAvatar='assets/images/personAvatar.png';
 
 }

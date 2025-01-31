@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:info_tech/core/assets_manager.dart';
 import 'package:info_tech/core/colors_manager.dart';
-import 'package:info_tech/presentation/screens/home/tabs/home_tab/widgets/custom_discover_container.dart';
+import 'package:info_tech/presentation/screens/home/tabs/home_tab/widgets/custom_home_container.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -45,10 +45,10 @@ class HomeTab extends StatelessWidget {
             SizedBox(height: screenHeight * 0.03),
             const Row(
               children: [
-                CustomDiscoverContainer(
+                CustomHomeContainer(
                     image: AssetsManager.ob3, text: 'Designing'),
                 Spacer(),
-                CustomDiscoverContainer(
+                CustomHomeContainer(
                     image: AssetsManager.ob2, text: 'Development'),
               ],
             ),
