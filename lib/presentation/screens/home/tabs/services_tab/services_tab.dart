@@ -34,6 +34,7 @@ class ServicesTab extends StatelessWidget {
           itemCount: items.length,
           itemBuilder: (context, index) {
             return CustomHomeContainer(
+              
               image: items[index]["image"]!,
               text: items[index]["text"]!,
             );
