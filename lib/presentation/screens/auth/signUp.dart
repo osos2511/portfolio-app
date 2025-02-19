@@ -62,13 +62,13 @@ class _SignUpState extends State<SignUp> {
                       String pattern = r'^[a-zA-Z]+$';
                       RegExp regex = RegExp(pattern);
                       if (input == null  ||input.trim().isEmpty) {
-                        return 'Please, enter your full name';
+                        return 'أدخل اسمك بالكامل';
                       }
                       if (input.length < 6) {
-                        return 'Your full name should be at least 6 characters';
+                        return 'الاسم يجب ان لا يقل عن 6 حروف';
                       }
                       if (!regex.hasMatch(input)) {
-                        return 'Invalid format. Only letters allowed';
+                        return 'صيغه غير صالحه ,مسموح بادخال الحروف فقط';
                       }
                       return null;
                     },
@@ -78,7 +78,7 @@ class _SignUpState extends State<SignUp> {
                     hintText: StringsManager.hintTextEmail,
                     validator: (input) {
                       if (input == null || input.trim().isEmpty) {
-                        return 'Please, enter your email';
+                        return 'أدخل بريدك الالكتروني';
                       }
                       return null;
                     },
@@ -89,10 +89,10 @@ class _SignUpState extends State<SignUp> {
                     validator: (input) {
 
                       if (input == null || input.trim().isEmpty) {
-                        return 'Please, enter your password';
+                        return ' أدخل كلمه المرور';
                       }
                       if (input.length < 8) {
-                        return 'Your password should be at least 8 characters';
+                        return 'كلمه المرور يجب ان لا تقل عن 8 حروف';
                       }
                       return null;
                     },
@@ -103,10 +103,10 @@ class _SignUpState extends State<SignUp> {
                     hintText: StringsManager.hintTextConfirmPassword,
                     validator: (input) {
                       if (input == null  ||input.trim().isEmpty) {
-                        return 'Please, confirm your password';
+                        return 'من فضلك قم بتأكيد كلمه المرور';
                       }
                       if (input.length < 8) {
-                        return 'Confirm password should be at least 8 characters';
+                        return 'كلمه المرور يجب ان لا تقل عن 8 حروف';
                       }
                       return null;
                     },
@@ -120,13 +120,13 @@ class _SignUpState extends State<SignUp> {
                         print('All inputs are valid');
                         DialogUtils.showLoadingDialog(
                           context,
-                          message: 'Loading...',
+                          message: 'تحميل...',
                         );
                         DialogUtils.hideDialog(context);
                         DialogUtils.messagingDialog(
                           context,
-                          content: 'Registered Successfully',
-                          posActionTitle: 'Ok',
+                          content: 'تم انشاء حسابك بنجاح',
+                          posActionTitle: 'حسنا',
                           posAction: () {
                             Navigator.pushReplacementNamed(
                                 context, RoutesManager.loginRoute);

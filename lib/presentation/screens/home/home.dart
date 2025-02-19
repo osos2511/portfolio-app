@@ -50,11 +50,11 @@ class Home extends StatelessWidget {
               context.read<PageControllerProvider>().jumpToPage(index);
             },
             items: [
-              _buildNavItem(Icons.build, 'Services'),
-              _buildNavItem(Icons.folder_special, 'Projects'),
-              _buildNavItem(Icons.home, 'Home'),
-              _buildNavItem(Icons.message, 'Message'),
-              _buildNavItem(Icons.more_horiz_rounded, 'More'),
+              _buildNavItem(Icons.build, 'الخدمات'),
+              _buildNavItem(Icons.folder_special, 'المشاريع'),
+              _buildNavItem(Icons.home, 'الرئيسية'),
+              _buildNavItem(Icons.message, 'التواصل'),
+              _buildNavItem(Icons.more_horiz_rounded, 'المزيد'),
             ],
           );
         },

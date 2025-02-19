@@ -59,10 +59,10 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
                   hintText: StringsManager.hintTextPassword,
                   validator: (input) {
                     if (input == null || input.trim().isEmpty) {
-                      return 'Please, enter your password';
+                      return ' أدخل كلمه المرور';
                     }
                     if (input.length < 8) {
-                      return 'Your password should be at least 8 characters';
+                      return 'كلمه المرور يجب ان لا تقل عن 8 حروف';
                     }
                     return null;
                   },
@@ -73,10 +73,10 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
                   hintText: StringsManager.hintTextConfirmPassword,
                   validator: (input) {
                     if (input == null || input.trim().isEmpty) {
-                      return 'Please, confirm your password';
+                      return 'من فضلك قم بتأكيد كلمه المرور';
                     }
                     if (input.length < 8) {
-                      return 'Confirm password should be at least 8 characters';
+                      return 'كلمه المرور يجب ان لا تقل عن 8 حروف';
                     }
                     return null;
                   },
@@ -95,7 +95,7 @@ class _ConfirmPasswordState extends State<ConfirmPassword> {
                       minimumSize: Size(140, 50),
                       backgroundColor: ColorsManager.yellow
                   ),
-                  child: Text('Confirm',style: GoogleFonts.poppins(
+                  child: Text('تأكيد',style: GoogleFonts.poppins(
                       fontSize: 20,
                       color: ColorsManager.mainAppColor,
                       fontWeight: FontWeight.w600

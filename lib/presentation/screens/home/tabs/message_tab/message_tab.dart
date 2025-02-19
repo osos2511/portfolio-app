@@ -19,7 +19,7 @@ class _MessageTabState extends State<MessageTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar:CustomAppbar(titleAppbar: "MESSAGE"),
+      appBar:CustomAppbar(titleAppbar: "تواصل معنا"),
       body: SingleChildScrollView(
         child: Padding(
           padding:
@@ -30,7 +30,7 @@ class _MessageTabState extends State<MessageTab> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                'Hi Hossam, what do you want to tell us?',
+                'مرحبا حسام,بماذا تود ان تخبرنا؟',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -39,7 +39,7 @@ class _MessageTabState extends State<MessageTab> {
               ),
               const SizedBox(height: 30),
               const Text(
-                'Contact Us',
+                'تواصل معنا',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 35,
@@ -48,7 +48,7 @@ class _MessageTabState extends State<MessageTab> {
               ),
               const SizedBox(height: 10),
               const Text(
-                'Any questions or remarks? Just write us a message.',
+                'لأي اسئله او استفسارات فقط قم بكتابه رساله.',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
@@ -82,7 +82,7 @@ class _MessageTabState extends State<MessageTab> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Contact Information',
+                                        'معلومات التواصل',
                                         style: TextStyle(
                                           color: ColorsManager.white,
                                           fontSize: 20,
@@ -96,7 +96,7 @@ class _MessageTabState extends State<MessageTab> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'You can contact us using this\n information',
+                                        'تستطيع التواصل معنا عبر تلك المعلومات',
                                         style: TextStyle(
                                           color: Colors.white60,
                                           fontSize: 13,
@@ -167,18 +167,18 @@ class _MessageTabState extends State<MessageTab> {
                           ),
                         ),
                         const SizedBox(height: 30),
-                        const CustomTextFormField(hintText: 'First Name'),
+                        const CustomTextFormField(hintText: 'الاسم الاول'),
                         const SizedBox(height: 15),
-                        const CustomTextFormField(hintText: 'Last Name'),
+                        const CustomTextFormField(hintText: 'الاسم الاخير'),
                         const SizedBox(height: 15),
-                        const CustomTextFormField(hintText: 'Email'),
+                        const CustomTextFormField(hintText: 'الايميل'),
                         const SizedBox(height: 15),
                         const CustomTextFormField(
-                            hintText: 'Phone number',
+                            hintText: 'رقم الهاتف',
                             keyboardType: TextInputType.phone),
                         const SizedBox(height: 30),
                         const Text(
-                          'Select Subject',
+                          'اختر موضوع',
                           style: TextStyle(
                               color: ColorsManager.white,
                               fontSize: 20,
@@ -224,7 +224,7 @@ class _MessageTabState extends State<MessageTab> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const CustomTextFormField(hintText: 'Message'),
+                        const CustomTextFormField(hintText: 'ادخل الخدمة'),
                         const SizedBox(
                           height: 20,
                         ),
@@ -234,7 +234,7 @@ class _MessageTabState extends State<MessageTab> {
                             ),
                             onPressed: () {},
                             child: Text(
-                              'Send Message',
+                              'ارسال',
                               style: GoogleFonts.alexandria(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,

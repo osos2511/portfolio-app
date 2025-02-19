@@ -3,6 +3,7 @@ import 'package:info_tech/presentation/screens/auth/verify/confirm_password.dart
 import 'package:info_tech/presentation/screens/auth/verify/verify_otp.dart';
 import 'package:info_tech/presentation/screens/home/about_us/about_us.dart';
 import 'package:info_tech/presentation/screens/home/project_details/project_details.dart';
+import 'package:info_tech/presentation/screens/home/tabs/message_tab/message_tab.dart';
 import 'package:info_tech/presentation/screens/home/tabs/more_tab/more_tab.dart';
 import 'package:info_tech/presentation/screens/onboarding/onboarding.dart';
 import '../presentation/screens/auth/signIn.dart';
@@ -22,6 +23,7 @@ class RoutesManager {
   static const String moreTabRoute = "/more";
   static const String aboutUsRoute = "/aboutUs";
   static const String projectDetailsRoute = "/projectDetails";
+  static const String messageTabRoute = "/messageTab";
 
   static Route<dynamic>? router(RouteSettings settings) {
     switch (settings.name) {
@@ -61,6 +63,10 @@ class RoutesManager {
         {
           return MaterialPageRoute(builder: (context) => MoreTab());
         }
+      case messageTabRoute:
+        {
+          return MaterialPageRoute(builder: (context) =>  MessageTab());
+        }
 
       case aboutUsRoute:
         {
@@ -68,9 +74,9 @@ class RoutesManager {
         }
         case projectDetailsRoute:
         {
-          final int index = settings.arguments as int;
           return MaterialPageRoute(
-            builder: (context) => ProjectDetails(index: index),
+            settings: settings,
+            builder: (context) => ProjectDetails(),
           );
         }
     }

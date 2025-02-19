@@ -58,7 +58,7 @@ class _OnboardingState extends State<Onboarding> {
                         Navigator.of(context).pushReplacementNamed(RoutesManager.homeRoute);
                       },
                       child: const Text(
-                        "SKIP",
+                        "تخطي",
                         style: TextStyle(
                           color: Colors.yellow,
                           fontSize: 20,
@@ -75,7 +75,7 @@ class _OnboardingState extends State<Onboarding> {
                   height: 10,
                 ),
                 Text(
-                  "WELCOME",
+                  "مرحبا",
                   style: GoogleFonts.lilyScriptOne(
                       fontSize: 50,
                       fontWeight: FontWeight.w400,
@@ -119,7 +119,7 @@ class _OnboardingState extends State<Onboarding> {
                   height: 10,
                 ),
                 Text(
-                  "SERVICES",
+                  "الخدمات",
                   style: GoogleFonts.lilyScriptOne(
                       fontSize: 50,
                       fontWeight: FontWeight.w400,
@@ -163,7 +163,7 @@ class _OnboardingState extends State<Onboarding> {
                   height: 10,
                 ),
                 Text(
-                  "PROJECTS",
+                  "المشاريع",
                   style: GoogleFonts.lilyScriptOne(
                       fontSize: 50,
                       fontWeight: FontWeight.w400,
@@ -174,7 +174,7 @@ class _OnboardingState extends State<Onboarding> {
                     style: ElevatedButton.styleFrom(backgroundColor: ColorsManager.yellow),
                     onPressed: (){
                       Navigator.pushReplacementNamed(context, RoutesManager.homeRoute);
-                    }, child: Text('START',style: GoogleFonts.alexandria(
+                    }, child: Text('ابدأ',style: GoogleFonts.alexandria(
                   color: Color(0xff171D2B),
                   fontWeight: FontWeight.w500,
                   fontSize: 20,

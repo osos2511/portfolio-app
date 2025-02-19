@@ -19,7 +19,7 @@ class VerifyOtp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Email Verify',
+                'تأكيد الايميل',
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: ColorsManager.yellow),
               ),
               SizedBox(height: 30),
@@ -41,7 +41,7 @@ class VerifyOtp extends StatelessWidget {
                 },
                 onSubmit: (String verificationCode) {
                   Fluttertoast.showToast(
-                      msg: 'Verification Code: $verificationCode',
+                      msg: '$verificationCode كود التأكيد: ',
                       toastLength: Toast.LENGTH_SHORT,
                       gravity: ToastGravity.CENTER,
                       timeInSecForIosWeb: 1,
@@ -58,10 +58,10 @@ class VerifyOtp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
 
                 children: [
-                  Text('Did not get code? ',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400),),
+                  Text('لم استلم كود؟ ',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400),),
                   InkWell(
                       onTap: (){},
-                      child: Text('send again',style: TextStyle(
+                      child: Text('أرسل مجددا',style: TextStyle(
                         color: ColorsManager.yellow,
                         fontWeight: FontWeight.w400,
                         decoration: TextDecoration.underline,
@@ -78,7 +78,7 @@ class VerifyOtp extends StatelessWidget {
                   minimumSize: Size(140, 50),
                   backgroundColor: ColorsManager.yellow
                 ),
-                child: Text('Verify',style: GoogleFonts.poppins(
+                child: Text('تأكيد',style: GoogleFonts.poppins(
                   fontSize: 20,
                   color: ColorsManager.mainAppColor,
                   fontWeight: FontWeight.w600

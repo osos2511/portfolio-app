@@ -58,7 +58,7 @@ class _SignInState extends State<SignIn> {
                     hintText: StringsManager.hintTextEmail,
                     validator: (input) {
                       if (input == null || input.trim().isEmpty) {
-                        return 'Please, enter your E-mail';
+                        return 'ادخل بريدك الالكتروني';
                       }
                       return null;
                     },
@@ -68,10 +68,10 @@ class _SignInState extends State<SignIn> {
                     hintText: StringsManager.hintTextPassword,
                     validator: (input) {
                       if (input == null || input.trim().isEmpty) {
-                        return 'Please, enter your password';
+                        return ' أدخل كلمه المرور';
                       }
                       if (input.length < 8) {
-                        return 'Your password should be at least 8 characters';
+                        return 'كلمه المرور يجب ان لا تقل عن 8 حروف';
                       }
                       return null;
                     },
@@ -84,7 +84,7 @@ class _SignInState extends State<SignIn> {
                       onTap: () {
                         Navigator.pushNamed(context, RoutesManager.verifyRoute);
                       },
-                      child: const Text('Forget Password?',
+                      child: const Text('هل نسيت كلمه المرور؟',
                           style: TextStyle(
                               color: ColorsManager.yellow,
                               fontSize: 17,
@@ -97,12 +97,12 @@ class _SignInState extends State<SignIn> {
                       if (formKey.currentState!.validate()) {
                         print('All inputs are valid');
                         DialogUtils.showLoadingDialog(context,
-                            message: 'Loading...');
+                            message: 'تحميل...');
                         DialogUtils.hideDialog(context);
                         DialogUtils.messagingDialog(
                           context,
-                          content: 'Logged-In Successfully',
-                          posActionTitle: 'Ok',
+                          content: 'تم تسجيل الدخول بنجاح',
+                          posActionTitle: 'حسنا',
                           posAction: () {
                             Navigator.pushReplacementNamed(
                                 context, RoutesManager.onboardingRoute);

@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:info_tech/core/colors_manager.dart';
 import 'package:info_tech/core/routes_manager.dart';
-import '../../../../../../core/colors_manager.dart';
+import 'package:info_tech/data/model/projects/Project.dart';
 
 class CustomProject extends StatelessWidget {
-  const CustomProject({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.image,
-    required this.index
-  });
-
+  final Project project;
   final String image;
   final String title;
-  final String description;
-  final int index;
+  final num index;
+
+  const CustomProject({
+    Key? key,
+    required this.project,
+    required this.title,
+    required this.image,
+    required this.index,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class CustomProject extends StatelessWidget {
         bottom: screenHeight * 0.1,
       ),
       child: SizedBox(
-        width: screenWidth*0.8,
+        width: screenWidth * 0.8,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -46,7 +47,7 @@ class CustomProject extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(30),
                         child: Container(
-                          height: screenHeight * 0.35,
+                          height: screenHeight * 0.45,
                           width: double.infinity,
                           color: ColorsManager.mainAppColor,
                           child: Padding(
@@ -54,8 +55,8 @@ class CustomProject extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage(image),
-                                  fit: BoxFit.cover,
+                                  image: NetworkImage(image),
+                                  fit: BoxFit.fill,
                                 ),
                               ),
                             ),
@@ -63,7 +64,6 @@ class CustomProject extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.015),
-
                       Center(
                         child: Text(
                           title,
@@ -76,69 +76,27 @@ class CustomProject extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.02),
-
-                      Center(
-                        child: Text(
-                          description,
-                          style: GoogleFonts.poppins(
-                            fontSize: screenWidth * 0.04,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.white70,
-                          ),
-                          textAlign: TextAlign.center,
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: ColorsManager.mainAppColor,
                         ),
-                      ),
-                      SizedBox(height: screenHeight * 0.02),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context,RoutesManager.projectDetailsRoute,arguments: index);
-
-                            },
-                            child: Text(
-                              'more details',
-                              style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400,
-                                fontSize: screenWidth * 0.04,
-                                color: Colors.deepPurpleAccent,
-                              ),
-                            ),
+                        onPressed: () {
+                          print("Passing project ID: ${project.id}"); // تحقق من وجود id
+                          Navigator.pushNamed(
+                            context,
+                            RoutesManager.projectDetailsRoute,
+                            arguments: index,
+                          );
+                        },
+                        child: Text(
+                          'تفاصيل أكثر',
+                          style: GoogleFonts.alexandria(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
                           ),
-                          SizedBox(width: screenWidth * 0.02),
-                          Icon(
-                            Icons.arrow_circle_right_outlined,
-                            color: Colors.deepPurpleAccent,
-                            size: screenWidth * 0.05,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: screenHeight * 0.01),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              'live preview',
-                              style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400,
-                                fontSize: screenWidth * 0.04,
-                                color: Colors.orangeAccent,
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: screenWidth * 0.02),
-                          Icon(
-                            Icons.arrow_circle_right_outlined,
-                            color: Colors.orangeAccent,
-                            size: screenWidth * 0.05,
-                          ),
-                        ],
-                      ),
+                        ),
+                      )
                     ],
                   ),
                 ),

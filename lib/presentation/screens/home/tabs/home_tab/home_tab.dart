@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:info_tech/core/assets_manager.dart';
 import 'package:info_tech/core/colors_manager.dart';
+import 'package:info_tech/core/routes_manager.dart';
 import 'package:info_tech/presentation/screens/home/tabs/home_tab/widgets/custom_home_container.dart';
 
 class HomeTab extends StatelessWidget {
@@ -20,19 +21,20 @@ class HomeTab extends StatelessWidget {
           vertical: screenHeight * 0.06,
         ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Welcome!',
+                    Text('مرحبا!',
                         style: GoogleFonts.poppins(
                             color: ColorsManager.white,
                             fontWeight: FontWeight.w300,
                             fontSize: screenWidth * 0.05)),
                     Text(
-                      'Osama Mohamed',
+                      'اسامه محمد',
                       style: GoogleFonts.poppins(
                           color: ColorsManager.yellow,
                           fontWeight: FontWeight.w700,
@@ -46,10 +48,10 @@ class HomeTab extends StatelessWidget {
             const Row(
               children: [
                 CustomHomeContainer(
-                    image: AssetsManager.ob3, text: 'Designing'),
+                    image: AssetsManager.ob3, text: 'التصميم'),
                 Spacer(),
                 CustomHomeContainer(
-                    image: AssetsManager.ob2, text: 'Development'),
+                    image: AssetsManager.ob2, text: 'التطوير'),
               ],
             ),
             SizedBox(height: screenHeight * 0.03),
@@ -81,38 +83,32 @@ class HomeTab extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "ALL SERVICES",
+                          "جميع الخدمات",
                           style: GoogleFonts.pottaOne(
                             fontSize: screenWidth * 0.055,
                             fontWeight: FontWeight.bold,
                             color: ColorsManager.mainAppColor,
                           ),
                         ),
-                        Text(
-                          "50%",
-                          style: GoogleFonts.pottaOne(
-                            fontSize: screenWidth * 0.045,
-                            fontWeight: FontWeight.w400,
-                            color: ColorsManager.mainAppColor,
-                          ),
-                        ),
                         SizedBox(height: screenHeight * 0.01),
                         Text(
-                          "- web, app development\n"
-                          "- web, app designing\n"
-                          "- editing web, app\n"
-                          "- software engineering\n"
-                          "- social media posting",
+                          "تطوير موبايل/ويب \n"
+                          "تصميم موبايل /ويب \n"
+                          "تعديل موبايل / ويب \n"
+                          "هندسه برمجيات \n"
+                          "منشورات تواصل اجتماعي ",
                           style: GoogleFonts.poppins(
                             fontSize: screenWidth * 0.035,
+                            fontWeight: FontWeight.w700,
                             color: Colors.black,
                           ),
                         ),
-                        SizedBox(height: screenHeight * 0.015),
+                        SizedBox(height: screenHeight * 0.01),
 
-                        /// زر "Apply"
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, RoutesManager.messageTabRoute);
+                          },
                           style: ElevatedButton.styleFrom(
                             minimumSize:
                                 Size(double.infinity, screenHeight * 0.05),
@@ -127,7 +123,7 @@ class HomeTab extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Apply',
+                                'قبول',
                                 style: GoogleFonts.poppins(
                                   color: ColorsManager.yellow,
                                   fontWeight: FontWeight.w400,

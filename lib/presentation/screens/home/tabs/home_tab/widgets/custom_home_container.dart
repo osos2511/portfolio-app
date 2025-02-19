@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:info_tech/core/colors_manager.dart';
+import 'package:info_tech/core/routes_manager.dart';
 
 class CustomHomeContainer extends StatelessWidget {
   const CustomHomeContainer({super.key, required this.image, required this.text});
@@ -33,13 +34,15 @@ class CustomHomeContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(image)),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, RoutesManager.messageTabRoute);
+            },
             style: ElevatedButton.styleFrom(
                 backgroundColor: ColorsManager.mainAppColor),
             child: Row(
               children: [
                 Text(
-                  'Discover',
+                  'تواصل معنا',
                   style: GoogleFonts.poppins(
                       color: Colors.yellow,
                       fontWeight: FontWeight.w400,

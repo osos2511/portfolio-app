@@ -14,7 +14,7 @@ class AboutUs extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar: const CustomAppbar(titleAppbar: 'ABOUT US'),
+      appBar: const CustomAppbar(titleAppbar: 'معلومات عنا'),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -38,10 +38,12 @@ class AboutUs extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'We are a team of tech innovators who turn technological challenges into exceptional opportunities. Every member of our team has a unique passion for innovation, where we combine deep expertise with bold creativity to craft outstanding digital solutions. We believe that technology is not just code, but a language of change and inspiration. We constantly strive to push beyond traditional boundaries, exploring new horizons in the tech world. Our team represents a unique blend of innovative and enthusiastic minds, where we turn bold ideas into tangible realities. We believe in the power of collaboration and thinking outside the box, and we always strive to make a positive impact through the innovative technological solutions we provide.',                    textAlign: TextAlign.center,
+                    textAlign: TextAlign.right,
+                    "نحن فريق من المبتكرين التقنيين الذين يحولون التحديات التكنولوجية إلى فرص استثنائية. كل عضو في فريقنا يتمتع بشغف فريد نحو الابتكار، حيث نجمع بين الخبرة العميقة والإبداع الجريء لصياغة حلول رقمية متميزة. نؤمن أن التكنولوجيا ليست مجرد أكواد، بل هي لغة التغيير والإلهام. نسعى باستمرار لتجاوز الحدود التقليدية، واستكشاف آفاق جديدة في عالم التكنولوجيا. يمثل فريقنا مزيجًا فريدًا من العقول المبتكرة والمتحمسة، حيث نحول الأفكار الجريئة إلى واقع ملموس. نؤمن بقوة التعاون والتفكير خارج الصندوق، ونسعى دائمًا لإحداث تأثير إيجابي من خلال الحلول التكنولوجية المبتكرة التي نقدمها.",
                     style: GoogleFonts.alexandria(
                       color: Colors.white70,
                       fontSize: 15,
+
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -58,7 +60,7 @@ class AboutUs extends StatelessWidget {
                       context.read<PageControllerProvider>().jumpToPage(3);
                     },
                     child: const Text(
-                      'Contact Us',
+                      'تواصل معنا',
                       style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 20),
                     ),
                   ),
