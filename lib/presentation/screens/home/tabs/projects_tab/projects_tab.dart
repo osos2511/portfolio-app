@@ -14,7 +14,7 @@ class ProjectsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppbar(titleAppbar: 'مشاريعنا'),
+      appBar:  CustomAppbar(titleAppbar: 'مشاريعنا'),
       backgroundColor: ColorsManager.mainAppColor,
       body: FutureBuilder<Result<ProjectsResponse>>(
         future: ApiManager.getAllProjects(),

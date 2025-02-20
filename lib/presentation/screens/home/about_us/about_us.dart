@@ -14,7 +14,7 @@ class AboutUs extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar: const CustomAppbar(titleAppbar: 'معلومات عنا'),
+      appBar:  CustomAppbar(titleAppbar: 'معلومات عنا'),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

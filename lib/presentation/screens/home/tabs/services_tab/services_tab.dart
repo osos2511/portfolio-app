@@ -19,7 +19,7 @@ class ServicesTab extends StatelessWidget {
     ];
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar: const CustomAppbar(titleAppbar: 'خدماتنا'),
+      appBar:  CustomAppbar(titleAppbar: 'خدماتنا'),
       body: Padding(
         padding: const EdgeInsets.only(top: 20,right: 8,left: 8),
         child: GridView.builder(

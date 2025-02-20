@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RoutesManager.router,
-      initialRoute: RoutesManager.homeRoute,
+      initialRoute: RoutesManager.splashRoute,
     );
   }
 }

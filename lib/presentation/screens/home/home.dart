@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:info_tech/core/colors_manager.dart';
+import 'package:info_tech/presentation/screens/home/tabs/contact_tab/contact_tab.dart';
 import 'package:info_tech/presentation/screens/home/tabs/home_tab/home_tab.dart';
-import 'package:info_tech/presentation/screens/home/tabs/message_tab/message_tab.dart';
 import 'package:info_tech/presentation/screens/home/tabs/more_tab/more_tab.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:info_tech/presentation/screens/home/tabs/projects_tab/projects_tab.dart';
@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
     const ServicesTab(),
     const ProjectsTab(),
     const HomeTab(),
-     MessageTab(),
+     ContactUsTab(),
     const MoreTab(),
   ];
 

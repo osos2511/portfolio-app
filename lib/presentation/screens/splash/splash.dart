@@ -51,7 +51,7 @@ class Splash extends StatelessWidget {
                 ],
                 onFinished: () {
                   Navigator.pushReplacementNamed(
-                      context, RoutesManager.loginRoute);
+                      context, RoutesManager.onboardingRoute);
                 },
               ),
             ),

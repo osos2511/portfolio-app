@@ -1,3 +1,5 @@
+import 'package:info_tech/data/model/contacts/Errors.dart';
+
 sealed class Result<T>{
 
 }
@@ -8,7 +10,8 @@ class Success<T> extends Result<T>{
 class ServerError<T> extends Result<T>{
   String code;
   String message;
-  ServerError({required this.message,required this.code});
+  Errors? errors;
+  ServerError({required this.message,required this.code,this.errors});
 }
 class Error<T> extends Result<T>{
   Exception exception;

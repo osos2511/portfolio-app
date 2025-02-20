@@ -71,7 +71,7 @@ class ProjectDetails extends StatelessWidget {
 
     if (projectId == null) {
       return Scaffold(
-        appBar: const CustomAppbar(titleAppbar: 'PROJECT DETAILS'),
+        appBar:  CustomAppbar(titleAppbar: 'PROJECT DETAILS'),
         backgroundColor: ColorsManager.mainAppColor,
         body: const Center(child: Text("Project ID is missing")),
       );
@@ -82,7 +82,7 @@ class ProjectDetails extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar: const CustomAppbar(titleAppbar: 'PROJECT DETAILS'),
+      appBar:  CustomAppbar(titleAppbar: 'PROJECT DETAILS'),
       body: FutureBuilder<Result<Project>>(
         future: ApiManager.getProjectDetails(projectId),
         builder: (context, snapshot) {
