@@ -11,12 +11,12 @@ class CustomProject extends StatelessWidget {
   final num index;
 
   const CustomProject({
-    Key? key,
+    super.key,
     required this.project,
     required this.title,
     required this.image,
     required this.index,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

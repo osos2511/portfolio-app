@@ -71,7 +71,7 @@ class _OnboardingState extends State<Onboarding> {
                 const OnboardingImage(
                   imagePath: AssetsManager.ob1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -104,7 +104,7 @@ class _OnboardingState extends State<Onboarding> {
                   ],
                 ),
                 dotpageview(),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
               ],
             ),
           ),
@@ -115,7 +115,7 @@ class _OnboardingState extends State<Onboarding> {
                 const OnboardingImage(
                   imagePath: AssetsManager.ob2,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -148,7 +148,7 @@ class _OnboardingState extends State<Onboarding> {
                   ],
                 ),
                 dotpageview(),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
               ],
             ),
           ),
@@ -159,7 +159,7 @@ class _OnboardingState extends State<Onboarding> {
                 const OnboardingImage(
                   imagePath: AssetsManager.ob3,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -175,13 +175,13 @@ class _OnboardingState extends State<Onboarding> {
                     onPressed: (){
                       Navigator.pushReplacementNamed(context, RoutesManager.homeRoute);
                     }, child: Text('ابدأ',style: GoogleFonts.alexandria(
-                  color: Color(0xff171D2B),
+                  color: const Color(0xff171D2B),
                   fontWeight: FontWeight.w500,
                   fontSize: 20,
                 ),)),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 dotpageview(),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
               ],
             ),
           ),

@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
     const ServicesTab(),
     const ProjectsTab(),
     const HomeTab(),
-     ContactUsTab(),
+     const ContactUsTab(),
     const MoreTab(),
   ];
 

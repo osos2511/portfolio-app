@@ -15,7 +15,7 @@ class HomeTab extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar: CustomAppbar(titleAppbar: 'الرئيسية '),
+      appBar: const CustomAppbar(titleAppbar: 'الرئيسية '),
       body: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: screenWidth * 0.05,

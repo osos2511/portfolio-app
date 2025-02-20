@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../data/model/contacts/User.dart';
 
 class ContactUsProvider extends ChangeNotifier {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
   final TextEditingController firstNameController = TextEditingController();
   final TextEditingController lastNameController = TextEditingController();
   final TextEditingController mobileController = TextEditingController();

@@ -10,7 +10,7 @@ import '../../../../../provider/contactUs.dart';
 import 'widgets/custom_text_form.dart';
 
 class ContactUsTab extends StatelessWidget {
-  const ContactUsTab({Key? key}) : super(key: key);
+  const ContactUsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class ContactUsTab extends StatelessWidget {
         builder: (context, contactUsProvider, child) {
           return Scaffold(
             backgroundColor: ColorsManager.mainAppColor,
-            appBar: CustomAppbar(
+            appBar: const CustomAppbar(
                 titleAppbar: "تواصل معنا"),
             body: SingleChildScrollView(
               child: Padding(

@@ -7,15 +7,12 @@ import 'package:info_tech/data/api_manager/api_manager.dart';
 import 'package:info_tech/data/model/projects/Project.dart';
 import 'package:info_tech/data/model/projects/Images.dart';
 import 'package:info_tech/presentation/screens/home/project_details/widgets/custom_icon_container.dart';
-
 import '../../../../../core/assets_manager.dart';
 import '../../../../../core/constants/end_points.dart';
 import '../../../Custom_appbar.dart';
 
-
-/// ودجت عرض الصور باستخدام CarouselSlider بدون استخدام PageView أو Provider
 class ProjectSlider extends StatelessWidget {
-  const ProjectSlider({Key? key, required this.images}) : super(key: key);
+  const ProjectSlider({super.key, required this.images});
 
   final List<Images>? images;
 
@@ -38,7 +35,7 @@ class ProjectSlider extends StatelessWidget {
         final imageUrl = (imagePath != null && imagePath.isNotEmpty)
             ? "http://${EndPoints.host}/storage/$imagePath"
             : defaultImage;
-        return Container(
+        return SizedBox(
           width: double.infinity,
           height: 300,
           child: Image.network(
@@ -62,7 +59,7 @@ class ProjectSlider extends StatelessWidget {
 }
 
 class ProjectDetails extends StatelessWidget {
-  const ProjectDetails({Key? key}) : super(key: key);
+  const ProjectDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,10 +67,10 @@ class ProjectDetails extends StatelessWidget {
     print("Project ID received: $projectId");
 
     if (projectId == null) {
-      return Scaffold(
+      return const Scaffold(
         appBar:  CustomAppbar(titleAppbar: 'PROJECT DETAILS'),
         backgroundColor: ColorsManager.mainAppColor,
-        body: const Center(child: Text("Project ID is missing")),
+        body: Center(child: Text("Project ID is missing")),
       );
     }
 
@@ -82,7 +79,7 @@ class ProjectDetails extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar:  CustomAppbar(titleAppbar: 'PROJECT DETAILS'),
+      appBar:  const CustomAppbar(titleAppbar: 'PROJECT DETAILS'),
       body: FutureBuilder<Result<Project>>(
         future: ApiManager.getProjectDetails(projectId),
         builder: (context, snapshot) {
@@ -150,23 +147,10 @@ class ProjectDetails extends StatelessWidget {
                                         ),
                                       ),
                                       SizedBox(height: screenHeight * 0.02),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 100,
-                                        child: CustomIconList(), // تأكد من وجود هذا الودجت
+                                        child: CustomIconList(),
                                       ),
-                                      // Text(
-                                      //   "Developed by",
-                                      //   style: GoogleFonts.poppins(
-                                      //       fontSize: 25,
-                                      //       color: ColorsManager.white,
-                                      //       fontWeight: FontWeight.w500),
-                                      // ),
-                                      // const SizedBox(height: 20),
-                                      // CustomDeveloperContainer(
-                                      //   name: 'Hossam Hassan',
-                                      //   role: 'Flutter Developer',
-                                      // ),
-
                                     ],
                                   ),
                                 ),

@@ -9,7 +9,7 @@ import 'package:info_tech/presentation/screens/home/project_details/widgets/proj
 import '../../Custom_appbar.dart';
 
 class ProjectDetails extends StatelessWidget {
-  const ProjectDetails({Key? key}) : super(key: key);
+  const ProjectDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +17,10 @@ class ProjectDetails extends StatelessWidget {
     print("Project ID received: $projectId");
 
     if (projectId == null) {
-      return Scaffold(
+      return const Scaffold(
         appBar:  CustomAppbar(titleAppbar: 'PROJECT DETAILS'),
         backgroundColor: ColorsManager.mainAppColor,
-        body: const Center(child: Text("Project ID is missing")),
+        body: Center(child: Text("Project ID is missing")),
       );
     }
 
@@ -29,7 +29,7 @@ class ProjectDetails extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar:  CustomAppbar(titleAppbar: 'تفاصيل المشروع'),
+      appBar:  const CustomAppbar(titleAppbar: 'تفاصيل المشروع'),
       body: FutureBuilder<Result<Project>>(
         future: ApiManager.getProjectDetails(projectId),
         builder: (context, snapshot) {
@@ -91,11 +91,10 @@ class ProjectDetails extends StatelessWidget {
                                         ),
                                       ),
                                       SizedBox(height: screenHeight * 0.02),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 100,
-                                        child: CustomIconList(), // تأكد من وجود هذا الودجت
+                                        child: CustomIconList(),
                                       ),
-                                      // يمكنك إضافة المزيد من التفاصيل هنا مثل المطورين أو معلومات إضافية
                                     ],
                                   ),
                                 ),

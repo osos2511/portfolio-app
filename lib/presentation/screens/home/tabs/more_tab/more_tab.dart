@@ -13,7 +13,7 @@ class MoreTab extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: ColorsManager.mainAppColor,
-      appBar:CustomAppbar(titleAppbar: "المزيد"),
+      appBar:const CustomAppbar(titleAppbar: "المزيد"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.025,vertical: screenHeight *0.2),
         child: Column(

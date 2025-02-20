@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../core/routes_manager.dart';
 
 class Splash extends StatelessWidget {
@@ -18,7 +17,7 @@ class Splash extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xff171D2B),
+      backgroundColor: const Color(0xff171D2B),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
         child: Column(

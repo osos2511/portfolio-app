@@ -9,12 +9,12 @@ import 'package:info_tech/presentation/screens/home/tabs/projects_tab/widgets/cu
 import 'package:info_tech/core/constants/end_points.dart';
 
 class ProjectsTab extends StatelessWidget {
-  const ProjectsTab({Key? key}) : super(key: key);
+  const ProjectsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  CustomAppbar(titleAppbar: 'مشاريعنا'),
+      appBar:  const CustomAppbar(titleAppbar: 'مشاريعنا'),
       backgroundColor: ColorsManager.mainAppColor,
       body: FutureBuilder<Result<ProjectsResponse>>(
         future: ApiManager.getAllProjects(),

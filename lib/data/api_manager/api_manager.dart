@@ -83,18 +83,17 @@ class ApiManager {
       if (response.statusCode == 200 || response.statusCode == 201) {
         return Success(data: ContactUsResponse.fromJson(parsedJson));
       } else {
-        // ✅ التعامل مع الخطأ بشكل صحيح
         String errorMessage = parsedJson['message'] ?? 'حدث خطأ ما';
         Errors? errors;
 
         if (parsedJson['errors'] != null) {
-          errors = Errors.fromJson(parsedJson['errors']);  // ✅ التصحيح هنا
+          errors = Errors.fromJson(parsedJson['errors']);
         }
 
         return ServerError(
           message: errorMessage,
           code: response.statusCode.toString(),
-          errors: errors, // ✅ إرجاع الأخطاء لعرضها عند الحاجة
+          errors: errors,
         );
       }
     } catch (e) {

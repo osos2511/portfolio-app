@@ -35,22 +35,22 @@ class RoutesManager {
         }
       case moreTabRoute:
         {
-          return MaterialPageRoute(builder: (context) => MoreTab());
+          return MaterialPageRoute(builder: (context) => const MoreTab());
         }
       case messageTabRoute:
         {
-          return MaterialPageRoute(builder: (context) =>  ContactUsTab());
+          return MaterialPageRoute(builder: (context) =>  const ContactUsTab());
         }
 
       case aboutUsRoute:
         {
-          return MaterialPageRoute(builder: (context) => AboutUs());
+          return MaterialPageRoute(builder: (context) => const AboutUs());
         }
         case projectDetailsRoute:
         {
           return MaterialPageRoute(
             settings: settings,
-            builder: (context) => ProjectDetails(),
+            builder: (context) => const ProjectDetails(),
           );
         }
     }
